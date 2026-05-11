@@ -1,10 +1,14 @@
 # Multi-Agent Fraud Detection System
+## Enterprise Fraud Operations Dashboard
+
+![FraudOps Dashboard](assets/fraudops-ai-ui-demo.gif)
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.2+-green.svg)](https://langchain-ai.github.io/langgraph/)
 
 Enterprise-grade multi-agent fraud decisioning system using LangGraph, anomaly detection, policy orchestration, and explainability.
+
 
 > Core design principle: the LLM/explanation layer does **not** make the fraud decision. Fraud decisions are generated through ML anomaly scoring, statistical rules, and deterministic policy orchestration. The explanation layer turns those decisions into analyst-readable and audit-ready summaries.
 
