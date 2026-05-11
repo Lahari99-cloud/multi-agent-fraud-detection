@@ -177,29 +177,3 @@ git push -u origin main
 ---
 
 Built by [Lahari Tadepalli](https://github.com/Lahari99-cloud).
-Phase 2 Additions
-
-Add these sections:
-
-Enterprise Features
-Ensemble fraud scoring
-MLflow experiment tracking
-Prometheus metrics
-OpenTelemetry tracing
-Grafana monitoring
-GitHub Actions CI/CD
-Structured JSON logging
-Evaluation framework
-
-Evaluation Metrics
-ROC-AUC: 0.94
-Precision: 0.91
-Recall: 0.88
-F1: 0.89
-False Positive Rate: 1.8%
-Run MLflow
-mlflow ui
-Run Docker Stack
-docker-compose -f docker/docker-compose.yml up
-Run Evaluation
-python -m evaluation.fraud_eval --input data/transactions.csv
