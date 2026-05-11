@@ -176,4 +176,4 @@ git push -u origin main
 
 ---
 
-Built by [Lahari Tadepalli](https://github.com/Lahari99-cloud).
+Built by [Lahari Tadepalli](https://github.com/Lahari99-cloud) — AI Solutions Engineer | Enterprise AI Systems
