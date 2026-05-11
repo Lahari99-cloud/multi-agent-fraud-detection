@@ -1,5 +1,7 @@
 from __future__ import annotations
-
+from fastapi import WebSocket
+import asyncio
+import random
 from typing import Any
 import time
 
@@ -98,3 +100,27 @@ def clear_analyst_queue() -> dict[str, Any]:
 @app.get("/metrics")
 def metrics() -> Response:
     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
+@app.websocket("/ws/fraud-stream")
+async def fraud_stream(websocket: WebSocket):
+    await websocket.accept()
+
+    while True:
+        event = {
+            "transaction_id": f"TXN-LIVE-{random.randint(1000,9999)}",
+            "risk_level": random.choice(
+                ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+            ),
+            "risk_score": round(random.uniform(0.1, 0.99), 3),
+            "recommended_action": random.choice(
+                [
+                    "APPROVE",
+                    "STEP_UP_AUTH",
+                    "ANALYST_REVIEW",
+                    "SOFT_DECLINE"
+                ]
+            ),
+        }
+
+        await websocket.send_json(event)
+
+        await asyncio.sleep(2)
